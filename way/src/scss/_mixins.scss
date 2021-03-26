@@ -2,6 +2,29 @@
  * Helper mixins
 */
 
+@mixin font_logo_subtitle{
+  font: {
+    size:1.3rem;
+    family:Arial;
+    style:normal;
+    weight:normal;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+@mixin btn-style{
+  padding: 15px 45px;
+  color:$color-dark-xl;
+  font-size: 1.7rem;
+  font-family: Georgia;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+
+
+
 // Clearfix
 // http://www.cssmojo.com/latest_new_clearfix_so_far/
 // Other clearfix options: https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_clearfix-me.scss
