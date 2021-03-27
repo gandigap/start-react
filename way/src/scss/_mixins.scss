@@ -24,6 +24,50 @@
   letter-spacing: 0.1em;
 }
 
+@mixin sidebar-link{
+  font: {
+    size:1.8rem;
+    family:PT Sans;
+    style:normal;
+    weight:normal;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+@mixin title__h2{
+  font: {
+    size:1.8rem;
+    family:PT Sans;
+    style:normal;
+    weight:normal;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+@mixin title__h3{
+  font: {
+    size:1.8rem;
+    family:PT Sans;
+    style:normal;
+    weight:normal;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+@mixin paragraph{
+  font: {
+    size:1.8rem;
+    family:PT Sans;
+    style:normal;
+    weight:normal;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
 @mixin btn-style{
   padding: 15px 45px;
   color:$color-dark-xl;
