@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.scss';
-import Header from './components/Header.jsx';
-import SideBar from './components/SideBar.jsx';
-import Profile from './components/Profile.jsx';
+import Header from './components/Header/Header.jsx';
+import SideBar from './components/Sidebar/Sidebar.jsx';
+import Profile from './components/Profile/Profile.jsx';
 
 const App = () => {
   return (

@@ -2,6 +2,17 @@
  * Helper mixins
 */
 
+@mixin regular-text{
+  font: {
+    size:1.6rem;
+    family:Arial;
+    style:normal;
+    weight:normal;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
 @mixin font_logo_subtitle{
   font: {
     size:1.3rem;

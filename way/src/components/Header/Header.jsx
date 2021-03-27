@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/icons/way.svg'
+import logo from '../../assets/icons/way.svg'
 
 const Header = () => {
 	return (

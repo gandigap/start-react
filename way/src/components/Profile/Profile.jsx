@@ -1,5 +1,6 @@
 import React from 'react';
-import hat from '../assets/icons/way.svg'
+import Myposts from './MyPosts/MyPosts.jsx';
+
 
 const Profile = () => {
   return (
@@ -8,14 +9,7 @@ const Profile = () => {
         <img className="main__hat-logo" src='' alt="" />
       </figure>
       <div>ava + description</div>
-      <div>My posts
-        <div>NewPost</div>
-        <div>
-          <div>post 1</div>
-          <div>post 1</div>
-        </div>
-      </div>
-      <button></button>
+      <Myposts />
     </main>
   )
 }
