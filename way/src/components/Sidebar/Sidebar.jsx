@@ -1,22 +1,23 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <nav className='sidebar'>
       <div className='sidebar__container'>
-        <a className='sidebar__container__link' href="">Profile</a>
+        <NavLink className='sidebar__container__link' to='/profile'>Profile</NavLink>
       </div>
       <div className='sidebar__container'>
-        <a className='sidebar__container__link' href="">Messages</a>
+        <NavLink className='sidebar__container__link' to='/dialogs'>Messages</NavLink>
       </div>
       <div className='sidebar__container'>
-        <a className='sidebar__container__link' href="">News</a>
+        <NavLink className='sidebar__container__link' to='/news'>News</NavLink>
       </div>
       <div className='sidebar__container'>
-        <a className='sidebar__container__link' href="">Music</a>
+        <NavLink className='sidebar__container__link' to='/music'>Music</NavLink>
       </div>
       <div className='sidebar__container'>
-        <a className='sidebar__container__link' href="">Setting</a>
+        <NavLink className='sidebar__container__link' to='/setting'>Setting</NavLink>
       </div>
     </nav>
   )

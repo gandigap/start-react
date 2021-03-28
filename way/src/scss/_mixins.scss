@@ -68,6 +68,17 @@
   letter-spacing: 0.1em;
 }
 
+@mixin dialog__title{
+  font: {
+    size:1.6rem;
+    family:PT Sans;
+    style:normal;
+    weight:normal;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
 @mixin btn-style{
   padding: 15px 45px;
   color:$color-dark-xl;
