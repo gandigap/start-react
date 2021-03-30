@@ -1,10 +1,9 @@
 import React from 'react';
-import profilePhoto from '../../../../assets/icons/profile-user.svg'
 
 const Post = (props) => {
   return (
     <div className='post'>
-      <img className='post__img' src={profilePhoto} alt="" />
+      <img className='post__img' src='icons/user.svg' alt="" />
       {props.message}
       <div>
         <span>like</span>{props.likescount}
