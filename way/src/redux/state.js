@@ -9,11 +9,11 @@ let state = {
     },
     messagesPage: {
         dialogs: [
-            { id: 1, name: 'Dan', photoFriend: '/photoFriends/music.svg' },
-            { id: 2, name: 'Artem', photoFriend: '/photoFriends/music.svg' },
-            { id: 3, name: 'Kate', photoFriend: '/photoFriends/music.svg' },
-            { id: 4, name: 'Vika', photoFriend: '/photoFriends/music.svg' },
-            { id: 5, name: 'Mick', photoFriend: '/photoFriends/music.svg' },
+            { id: 1, name: 'Dan', photoFriend: '/photoFriends/Dan.jpg' },
+            { id: 2, name: 'Mat', photoFriend: '/photoFriends/Mat.jpg' },
+            { id: 3, name: 'Kate', photoFriend: '/photoFriends/Kate.jpg' },
+            { id: 4, name: 'Kim', photoFriend: '/photoFriends/Kim.jpg' },
+            { id: 5, name: 'Olga', photoFriend: '/photoFriends/Olga.jpg' },
         ],
         messages: [
             { id: 1, message: 'Hi' },

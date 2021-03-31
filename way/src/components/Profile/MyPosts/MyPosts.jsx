@@ -8,15 +8,13 @@ const MyPosts = (props) => {
     <Post message={element.message} likescount={element.likesCount} />);
 
   return (
-    <div className='myposts'>My posts
+    <div className='profilePosts'>My posts
       <div>
         <textarea name="" id="" cols="30" rows="5"></textarea>
         <button>Add post</button>
       </div>
-      <div>
+      {postsElements}
 
-        {postsElements}
-      </div>
     </div >
   )
 }
