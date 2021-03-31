@@ -124,25 +124,25 @@ body{
         background-color: $third-color;
       }
 
-      .profilePosts{
+      .profile__posts{
 
-        .post{
+        &__post{
           @include paragraph;
   
-          .post__img{
-            background-color: $first-color;
-            
+          &__img{
+            width: 50px;
+            background-color: $first-color;            
           }
         }
       }
     }
 
     .dialogs{
-      display:grid;
-      grid-template-columns: 2fr 10fr;
-      background-color: $white-color;
+      display:flex;   
+      flex-wrap: wrap;         
 
       &__items{
+        width: 20%;
         background-color: $first-color;
         border-radius: 20px;
 
@@ -167,6 +167,18 @@ body{
         }
         
       }
+
+      &__messages{
+        width: 80%;     
+        background-color: $white-color;  
+      }
+
+      &__new-message{
+        margin:10px;
+        background-color: $fourth-color;
+      }
+
+      
 
       .active{
         color:$second-color;
