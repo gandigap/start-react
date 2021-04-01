@@ -13,15 +13,16 @@ const App = (props) => {
     <div className='wrapper'>
       <Header />
       <SideBar
-        links={props.data.sidebarPage.sidebarLinks}
-        friends={props.data.sidebarPage.sidebarFriends} />
+        links={props.state.sidebarPage.sidebarLinks}
+        friends={props.state.sidebarPage.sidebarFriends} />
       <main className='main'>
         <Route path='/profile' render={() => <Profile
-          posts={props.data.profilePage.posts}
-          addPost={props.addPost} />} />
+          profilePage={props.state.profilePage}
+          addPost={props.addPost}
+          updateNewPostText={props.updateNewPostText} />} />
         <Route path='/messages' render={() => <Dialogs
-          dialogs={props.data.messagesPage.dialogs}
-          messages={props.data.messagesPage.messages} />} />
+          dialogs={props.state.messagesPage.dialogs}
+          messages={props.state.messagesPage.messages} />} />
         <Route path='/setting' render={() => <Setting />} />
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
