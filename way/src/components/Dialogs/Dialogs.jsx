@@ -3,19 +3,24 @@ import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
 const Dialogs = (props) => {
-
+    /*    debugger; */
     let dialogsElements = props.dialogs.map((element) =>
-        <DialogItem name={element.name} id={element.id} src={element.photoFriend} />);
+        <DialogItem name={element.name} id={element.id} src={element.photoFriend} login={element.login} />);
 
     let messagesElements = props.messages.map((element) =>
-        <Message message={element.message} />);
+        <Message message={element.message} login={element.login} photoMessageSender={element.photoMessageSender} />);
 
-    let newMessageTextareaElement = React.createRef();
+    let newMessageElement = React.createRef();
 
-    let addNewMessage = () => {
-        let text = newMessageTextareaElement.current.value;
-        alert(text);
+    let addMessage = () => {
+        props.addMessage();
     }
+
+    let onMessageChange = () => {
+        let text = newMessageElement.current.value;
+        props.updateNewMessageText(text);
+    }
+
 
     return (
         <div className='dialogs'>
@@ -27,8 +32,10 @@ const Dialogs = (props) => {
             </div>
             <div className="dialogs__new-message">
                 <h3 className="dialogs__new-message__title">New message</h3>
-                <textarea className="dialogs__new-message__text" ref={newMessageTextareaElement} name="" id="" cols="30" rows="5"></textarea>
-                <button className="dialogs__new-message__button" onClick={addNewMessage}>Отправить</button>
+                <textarea className="dialogs__new-message__text"
+                    ref={newMessageElement} name="" id="" cols="30" rows="5"
+                    onChange={onMessageChange} value={props.newMessageText} />
+                <button className="dialogs__new-message__button" onClick={addMessage}>Отправить</button>
             </div>
 
         </div>

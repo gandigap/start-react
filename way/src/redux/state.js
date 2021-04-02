@@ -11,19 +11,20 @@ let state = {
     },
     messagesPage: {
         dialogs: [
-            { id: 1, name: 'Dan', photoFriend: '/photoFriends/Dan.jpg' },
-            { id: 2, name: 'Mat', photoFriend: '/photoFriends/Mat.jpg' },
-            { id: 3, name: 'Kate', photoFriend: '/photoFriends/Kate.jpg' },
-            { id: 4, name: 'Kim', photoFriend: '/photoFriends/Kim.jpg' },
-            { id: 5, name: 'Olga', photoFriend: '/photoFriends/Olga.jpg' },
+            { id: 1, name: 'Dan', photoFriend: '/photoFriends/Dan.jpg', login: 'supDan' },
+            { id: 2, name: 'Mat', photoFriend: '/photoFriends/Mat.jpg', login: 'Matt' },
+            { id: 3, name: 'Kate', photoFriend: '/photoFriends/Kate.jpg', login: 'katuha' },
+            { id: 4, name: 'Kim', photoFriend: '/photoFriends/Kim.jpg', login: 'kim99' },
+            { id: 5, name: 'Olga', photoFriend: '/photoFriends/Olga.jpg', login: 'ol322' },
         ],
         messages: [
-            { id: 1, message: 'Hi' },
-            { id: 2, message: 'Hello' },
-            { id: 3, message: 'How are you?' },
-            { id: 4, message: 'Fine' },
-            { id: 5, message: 'Ok' },
-        ]
+            { id: 1, message: 'Hi', login: 'supDan', photoMessageSender: '/photoFriends/Dan.jpg' },
+            { id: 2, message: 'Hello', login: 'myLog', photoMessageSender: '/photoFriends/MyPhoto.png' },
+            { id: 3, message: 'How are you?', login: 'supDan', photoMessageSender: '/photoFriends/Dan.jpg' },
+            { id: 4, message: 'Fine', login: 'myLog', photoMessageSender: '/photoFriends/MyPhoto.png' },
+            { id: 5, message: 'Ok', login: 'myLog', photoMessageSender: '/photoFriends/MyPhoto.png' },
+        ],
+        newMessageText: 'write message'
     },
     sidebarPage: {
         sidebarLinks: [
@@ -47,17 +48,32 @@ window.state = state;
 export let addPost = () => {
     let newPost = {
         id: 5,
-        message: state.newPostText,
+        message: state.profilePage.newPostText,
         likesCount: 0
     };
     state.profilePage.posts.push(newPost);
     state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 }
-
-
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.messagesPage.newMessageText,
+        login: 'myLog',
+        photoMessageSender: '/photoFriends/MyPhoto.png'
+    };
+    state.messagesPage.messages.push(newMessage);
+    state.messagesPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.messagesPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
 

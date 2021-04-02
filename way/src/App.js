@@ -16,19 +16,23 @@ const App = (props) => {
         links={props.state.sidebarPage.sidebarLinks}
         friends={props.state.sidebarPage.sidebarFriends} />
       <main className='main'>
+        <figure>
+          <img className="main__hat-logo" src='/icons/main-img.svg' alt="" />
+        </figure>
         <Route path='/profile' render={() => <Profile
           profilePage={props.state.profilePage}
           addPost={props.addPost}
           updateNewPostText={props.updateNewPostText} />} />
         <Route path='/messages' render={() => <Dialogs
           dialogs={props.state.messagesPage.dialogs}
-          messages={props.state.messagesPage.messages} />} />
+          messages={props.state.messagesPage.messages}
+          addMessage={props.addMessage}
+          updateNewMessageText={props.updateNewMessageText} />} />
         <Route path='/setting' render={() => <Setting />} />
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
       </main>
     </div>
-
 
   );
 }

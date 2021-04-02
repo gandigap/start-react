@@ -57,9 +57,20 @@
   letter-spacing: 0.1em;
 }
 
+@mixin title__h2{
+  font: {
+    size:2.4rem;
+    family:PT Sans;
+    style:normal;
+    weight:bold;
+  }
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
 @mixin paragraph{
   font: {
-    size:1.8rem;
+    size:1.6rem;
     family:PT Sans;
     style:normal;
     weight:normal;
