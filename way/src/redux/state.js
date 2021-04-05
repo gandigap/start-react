@@ -10,7 +10,7 @@ let store = {
                 { id: 1, message: 'Hi, how are you', likesCount: 12 },
                 { id: 2, message: 'It`s my first post', likesCount: 22 }
             ],
-            newPostText: 'it-kam'
+            newPostText: ''
         },
         messagesPage: {
             dialogs: [
@@ -27,7 +27,7 @@ let store = {
                 { id: 4, message: 'Fine', login: 'myLog', photoMessageSender: '/photoFriends/MyPhoto.png' },
                 { id: 5, message: 'Ok', login: 'myLog', photoMessageSender: '/photoFriends/MyPhoto.png' },
             ],
-            newMessageText: 'write message'
+            newMessageText: ''
         },
         sidebarPage: {
             sidebarLinks: [
