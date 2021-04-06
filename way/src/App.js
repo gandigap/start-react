@@ -9,9 +9,11 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 
 const App = (props) => {
+  debugger;
   return (
     <div className='wrapper'>
       <Header />
+
       <SideBar
         links={props.state.sidebarPage.sidebarLinks}
         friends={props.state.sidebarPage.sidebarFriends} />
