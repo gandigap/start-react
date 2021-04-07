@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-const SidebarContainer = (props) => {
+const SidebarContent = (props) => {
     let linkUrl = '/' + props.text.toLowerCase();
     return (
 
@@ -15,4 +15,4 @@ const SidebarContainer = (props) => {
     )
 }
 
-export default SidebarContainer;
+export default SidebarContent;

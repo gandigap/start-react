@@ -1,15 +1,18 @@
 import React from 'react';
-import SidebarContainer from './SidebarContainer/SidebarContainer';
+import SidebarContent from './SidebarContent/SidebarContent';
 import SidebarFriends from './SidebarFriends/SidebarFriends';
 
 const Sidebar = (props) => {
-  let sidebarContainers = props.links.map((element) =>
-    <SidebarContainer src={element.iconSrc} text={element.text} />
+  let state = props.sidebarPage;
+
+  let sidebarContainers = state.sidebarLinks.map((element) =>
+    <SidebarContent src={element.iconSrc} text={element.text} />
   );
+
   return (
     <nav className='sidebar'>
       {sidebarContainers}
-      <SidebarFriends friends={props.friends} />
+      <SidebarFriends friends={state.sidebarFriends} />
     </nav>
   )
 }
