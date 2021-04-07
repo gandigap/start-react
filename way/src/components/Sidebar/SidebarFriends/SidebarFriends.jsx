@@ -3,7 +3,7 @@ import SidebarFriend from './SidebarFriend/SidebarFriend';
 
 const SidebarFriends = (props) => {
     let sidebarFriends = props.friends.map((element) =>
-        <SidebarFriend src={element.photoFriend} name={element.name} id={element.id} />
+        <SidebarFriend src={element.photoFriend} name={element.name} id={element.id} key={element.id} />
     );
 
     return (

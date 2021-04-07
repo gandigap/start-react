@@ -6,7 +6,7 @@ const Sidebar = (props) => {
   let state = props.sidebarPage;
 
   let sidebarContainers = state.sidebarLinks.map((element) =>
-    <SidebarContent src={element.iconSrc} text={element.text} />
+    <SidebarContent src={element.iconSrc} text={element.text} key={element.text} />
   );
 
   return (
