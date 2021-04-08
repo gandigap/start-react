@@ -4,6 +4,7 @@ let initialState = {
     { iconSrc: '/icons/messages.svg', text: 'Messages' },
     { iconSrc: '/icons/music.svg', text: 'Music' },
     { iconSrc: '/icons/news.svg', text: 'News' },
+    { iconSrc: '/icons/news.svg', text: 'Users' },
     { iconSrc: '/icons/settings.svg', text: 'Settings' }
   ],
   sidebarFriends: [

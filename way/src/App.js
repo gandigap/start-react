@@ -7,6 +7,7 @@ import Setting from './components/Setting/Setting';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   return (
@@ -22,6 +23,7 @@ const App = (props) => {
         <Route path='/setting' render={() => <Setting />} />
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
+        <Route path='/users' render={() => <UsersContainer />} />
       </main>
     </div>
 
