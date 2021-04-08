@@ -3,12 +3,7 @@ const FOLLOW = 'FOLLOW';
 const SET_USERS = 'SET-USERS';
 
 let initialState = {
-  users: [
-    { id: 1, photoUrl: '/icons/user.svg', followed: false, fullName: 'Igor', status: 'Í am a boss', location: { city: 'Minsk', country: 'Belarus' } },
-    { id: 1, photoUrl: '/icons/user.svg', followed: true, fullName: 'Sasha', status: 'Í am a boss too', location: { city: 'Moscow', country: 'Russia' } },
-    { id: 1, photoUrl: '/icons/user.svg', followed: false, fullName: 'Andrey', status: 'Í am a boss giper boss', location: { city: 'Kiev', country: 'Ukarain' } },
-  ],
-  newPostText: ''
+  users: []
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -17,7 +12,7 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.map((user) => {
-          if (user.userID === action.userID) {
+          if (user.id === action.userID) {
             return { ...user, followed: true }
           }
           return user;
@@ -27,7 +22,7 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.map((user) => {
-          if (user.userID === action.userID) {
+          if (user.id === action.userID) {
             return { ...user, followed: false }
           }
           return user;
