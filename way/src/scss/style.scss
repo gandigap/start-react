@@ -237,11 +237,26 @@ body{
 
     }
 
-    .user-content{
+    .users{
+      &__pagination{
+        background-color: $second-color;
 
-      img{
-        width: 40px;
-        height: 40px;
+        &__pagin{
+           
+           font-size: 16px;
+        }
+
+        .selected__pagin{
+          font-weight: bold;
+        }
+      }
+
+      .user-content{
+
+        img{
+          width: 40px;
+          height: 40px;
+        }
       }
     }
 
