@@ -20,7 +20,7 @@ let Users = (props) => {
       {
         props.users.map((user) => <div className='user-content' key={user.id}>
           <div className='user-content__logo'>
-            <img src={user.photos.small != null ? user.photos.small : '/photoFriends/MyPhoto.png'} alt="" />
+            <img src={user.photos.small != null ? user.photos.small : '/assets/photoFriends/MyPhoto.png'} alt="" />
             {user.followed
               ? <button onClick={() => {
                 props.unfollow(user.id)

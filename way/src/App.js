@@ -16,7 +16,7 @@ const App = (props) => {
       <SidebarContainer />
       <main className='main'>
         <figure>
-          <img className="main__hat-logo" src='/icons/main-img.svg' alt="" />
+          <img className="main__hat-logo" src='/assets/icons/main-img.svg' alt="" />
         </figure>
         <Route path='/profile' render={() => <Profile />} />
         <Route path='/messages' render={() => <DialogsContainer />} />

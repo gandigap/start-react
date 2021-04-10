@@ -1,7 +1,7 @@
 import React from 'react';
 import * as axios from 'axios';
 import { connect } from 'react-redux';
-import { followAC, setUsersAC, setCurrentPageAC, unfollowAC, setTotalUsersCountAC, toogleIsFetchingAC } from '../../redux/usersReducer';
+import { follow, setUsers, setCurrentPage, unfollow, setTotalUsersCount, toogleIsFetching } from '../../redux/usersReducer';
 import Users from './Users';
 import Preloader from '../common/preloader/Preloader';
 
@@ -51,29 +51,12 @@ let mapStateToProps = (state) => {
   }
 }
 
-let mapsDispatchToProps = (dispatch) => {
-  return {
-    follow: (userID) => {
-      dispatch(followAC(userID))
-    },
-    unfollow: (userID) => {
-      dispatch(unfollowAC(userID))
-    },
-    setUsers: (users) => {
-      dispatch(setUsersAC(users))
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber))
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountAC(totalCount))
-    },
-    toogleIsFetching: (isFetching) => {
-      dispatch(toogleIsFetchingAC(isFetching))
-    }
-  }
-}
 
-const SidebarContainer = connect(mapStateToProps, mapsDispatchToProps)(UsersContainer)
-
-export default SidebarContainer;
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching
+})(UsersContainer);
