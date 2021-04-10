@@ -1,13 +1,41 @@
 import React from 'react';
+import Preloader from '../../common/preloader/Preloader';
 
 const ProfileInfo = (props) => {
-    return (
-        <div className='profile-info'>
-            <div>ava + description
-            https://www.behance.net/gallery/106334253/Social-network-concept?tracking_source=search_projects_recommended%7Csocial%20network
+    if (!props.profile) {
+        return <Preloader />
+    } else {
+        let subjects = props.profile.contacts;
+
+
+        let a = Object.keys(subjects).map((item, i) => {
+            console.log(i, item, subjects[item]);
+            if (!subjects[item]) {
+                return <></>;
+            } else {
+                return <div>
+                    <img src={i} alt="" />
+                    <p className='new' key={i}>{item} - {subjects[item]}</p>
+                </div>
+            }
+
+        });
+
+        return (
+            <div className='profile-info'>
+
+                <figure className='profile-info__photo'>
+                    <img className='profile-info__photo__img' src={props.profile.photos.small} alt="" />
+                    <figcaption className='profile-info__photo__fullname'>{props.profile.fullName}</figcaption>
+                </figure>
+                <div className='profile-info__description'>{props.profile.aboutMe}</div>
+                <div className='profile-info__contacts'>{a}</div>
+                <div className='profile-info__contacts'>В поисках работы {props.profile.lookingForAJob ? 'Да' : 'Нет'}</div>
+                <a href={'http://' + props.profile.contacts.facebook}>Link</a>
             </div>
-        </div>
-    )
+        )
+    }
+
 }
 
 export default ProfileInfo;
