@@ -18,7 +18,7 @@ const App = (props) => {
         <figure>
           <img className="main__hat-logo" src='/assets/icons/main-img.svg' alt="" />
         </figure>
-        <Route path='/profile' render={() => <ProfileContainer />} />
+        <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
         <Route path='/messages' render={() => <DialogsContainer />} />
         <Route path='/setting' render={() => <Setting />} />
         <Route path='/news' render={() => <News />} />

@@ -9,7 +9,6 @@ const ProfileInfo = (props) => {
 
 
         let a = Object.keys(subjects).map((item, i) => {
-            console.log(i, item, subjects[item]);
             if (!subjects[item]) {
                 return <></>;
             } else {
@@ -18,7 +17,6 @@ const ProfileInfo = (props) => {
                     <p className='new' key={i}>{item} - {subjects[item]}</p>
                 </div>
             }
-
         });
 
         return (
