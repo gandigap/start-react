@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-
+import * as axios from 'axios';
 
 let Users = (props) => {
 
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize / 300);
+  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
   let pages = [];
   for (let index = 1; index <= pagesCount; index++) {
     pages.push(index);
@@ -27,10 +27,33 @@ let Users = (props) => {
             </NavLink>
             {user.followed
               ? <button onClick={() => {
-                props.unfollow(user.id)
+                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
+                  withCredentials: true,
+                  headers: {
+                    'API-KEY': 'b4ff576c-5d0f-46dc-b077-f6024a55c0d0'
+                  }
+                })
+                  .then(response => {
+                    if (response.data.resultCode === 0) {
+                      props.unfollow(user.id)
+                    }
+                  });
+
               }}>Unfollow</button>
               : <button onClick={() => {
+                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
+                  withCredentials: true,
+                  headers: {
+                    'API-KEY': 'b4ff576c-5d0f-46dc-b077-f6024a55c0d0'
+                  }
+                })
+                  .then(response => {
+                    if (response.data.resultCode === 0) {
+                      props.follow(user.id)
+                    }
+                  });
                 props.follow(user.id)
+
               }}>Follow</button>}
           </div>
           <div className='user-content__info'>
