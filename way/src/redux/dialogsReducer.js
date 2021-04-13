@@ -28,7 +28,7 @@ const dialogsReducer = (state = initialState, action) => {
       return {
         ...state,
         newMessageText: '',
-        messages: [...state.messages, { id: 5, message: text, login: 'myLog', photoMessageSender: '/photoFriends/MyPhoto.png' }]
+        messages: [...state.messages, { id: 5, message: text, login: 'myLog', photoMessageSender: '/assets/photoFriends/MyPhoto.png' }]
       };
     case UPDATE_NEW_MESSAGE_TEXT:
       return {
