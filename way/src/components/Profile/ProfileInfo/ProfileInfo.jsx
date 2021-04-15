@@ -1,5 +1,6 @@
 import React from 'react';
 import Preloader from '../../common/preloader/Preloader';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -25,6 +26,7 @@ const ProfileInfo = (props) => {
                 <figure className='profile-info__photo'>
                     <img className='profile-info__photo__img' src={props.profile.photos.small} alt="" />
                     <figcaption className='profile-info__photo__fullname'>{props.profile.fullName}</figcaption>
+                    <ProfileStatus status={'new'} />
                 </figure>
                 <div className='profile-info__description'>{props.profile.aboutMe}</div>
                 <div className='profile-info__contacts'>{a}</div>
