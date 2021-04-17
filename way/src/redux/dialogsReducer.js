@@ -1,4 +1,4 @@
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 const ADD_MESSAGE = 'ADD-MESSAGE';
 
 let initialState = {
@@ -15,8 +15,7 @@ let initialState = {
     { id: 3, message: 'How are you?', login: 'supDan', photoMessageSender: '/assets/photoFriends/Dan.jpg' },
     { id: 4, message: 'Fine', login: 'myLog', photoMessageSender: '/assets/photoFriends/MyPhoto.png' },
     { id: 5, message: 'Ok', login: 'myLog', photoMessageSender: '/assets/photoFriends/MyPhoto.png' },
-  ],
-  newMessageText: ''
+  ]
 }
 
 const dialogsReducer = (state = initialState, action) => {
@@ -24,25 +23,18 @@ const dialogsReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case ADD_MESSAGE:
-      let text = state.newMessageText;
+      let text = action.newMessageText;
       return {
         ...state,
-        newMessageText: '',
         messages: [...state.messages, { id: 5, message: text, login: 'myLog', photoMessageSender: '/assets/photoFriends/MyPhoto.png' }]
       };
-    case UPDATE_NEW_MESSAGE_TEXT:
-      return {
-        ...state,
-        newMessageText: action.newText
-      };
+
     default:
       return state;
   }
 }
 
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
-export const updateNewMessageActionCreator = (text) =>
-  ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text })
+export const addMessageActionCreator = (newMessageText) => ({ type: ADD_MESSAGE, newMessageText });
 
 
 export default dialogsReducer;
