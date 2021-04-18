@@ -21,16 +21,15 @@ const ProfileInfo = (props) => {
         });
 
         return (
-            <div className='profile-info'>
-
-                <figure className='profile-info__photo'>
-                    <img className='profile-info__photo__img' src={props.profile.photos.small} alt="" />
-                    <figcaption className='profile-info__photo__fullname'>{props.profile.fullName}</figcaption>
+            <div className='profile__info'>
+                <figure className='profile__info__photo'>
+                    <img className='profile__info__photo__img' src={props.profile.photos.small} alt="" />
+                    <figcaption className='profile__info__photo__fullname'>{props.profile.fullName}</figcaption>
                     <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                 </figure>
-                <div className='profile-info__description'>{props.profile.aboutMe}</div>
-                <div className='profile-info__contacts'>{a}</div>
-                <div className='profile-info__contacts'>В поисках работы {props.profile.lookingForAJob ? 'Да' : 'Нет'}</div>
+                <div className='profile__info__description'>{props.profile.aboutMe}</div>
+                <div className='profile__info__contacts'>{a}</div>
+                <div className='profile__info__contacts'>В поисках работы {props.profile.lookingForAJob ? 'Да' : 'Нет'}</div>
                 <a href={'http://' + props.profile.contacts.facebook}>Link</a>
             </div>
         )

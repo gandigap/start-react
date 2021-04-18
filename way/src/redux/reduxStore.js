@@ -11,7 +11,7 @@ import { reducer as formReducer } from 'redux-form';
 
 let reducers = combineReducers({
   profilePage: profileReducer,
-  messagesPage: dialogsReducer,
+  dialogsPage: dialogsReducer,
   sidebarPage: sidebarReducer,
   usersPage: usersReducer,
   auth: authReducer,

@@ -1,5 +1,4 @@
-
-const ADD_MESSAGE = 'ADD-MESSAGE';
+const SEND_MESSAGE = 'SEND_MESSAGE';
 
 let initialState = {
   dialogs: [
@@ -16,25 +15,22 @@ let initialState = {
     { id: 4, message: 'Fine', login: 'myLog', photoMessageSender: '/assets/photoFriends/MyPhoto.png' },
     { id: 5, message: 'Ok', login: 'myLog', photoMessageSender: '/assets/photoFriends/MyPhoto.png' },
   ]
-}
+};
 
 const dialogsReducer = (state = initialState, action) => {
-
-
   switch (action.type) {
-    case ADD_MESSAGE:
-      let text = action.newMessageText;
+    case SEND_MESSAGE:
+      let text = action.newMessageBody;
       return {
         ...state,
         messages: [...state.messages, { id: 5, message: text, login: 'myLog', photoMessageSender: '/assets/photoFriends/MyPhoto.png' }]
       };
-
     default:
       return state;
   }
 }
 
-export const addMessageActionCreator = (newMessageText) => ({ type: ADD_MESSAGE, newMessageText });
+export const sendMessageCreator = (newMessageBody) => ({ type: SEND_MESSAGE, newMessageBody })
 
 
 export default dialogsReducer;

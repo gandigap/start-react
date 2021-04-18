@@ -137,8 +137,25 @@ body{
 
     .profile {
       
+      &__info{
+        @include paragraph;
+      }
 
-      .profile__posts{
+      
+
+      &__posts{
+        &__form{
+          display: inline-flex;
+          flex-direction: column;
+  
+          &__textarea{
+          
+          }         
+  
+          &__button{
+          margin: 5px;
+          }          
+        }
 
         &__post{
           @include paragraph;
@@ -265,12 +282,16 @@ body{
       .button_status_follow[disabled]{
         background-color: red;
       }
-    }
-
-    
+    }    
   }  
-  
-  
+}
+
+.error-validate input, .error-validate textarea{
+  border: 1px solid red;
+}
+
+.message-error-validate{
+  color: red;
 }
 
 @keyframes App-logo-spin {
