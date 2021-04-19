@@ -9,8 +9,10 @@ const Header = (props) => {
 			<input className="header__input-search" type="search" name="" id="" />
 
 			<div className='auth__cont'>
-				{props.isAuth ? props.login : <NavLink to={'/login'}>
-					Login
+				{props.isAuth
+					? <div>{props.login} <button onClick={props.logout}>Logout</button> </div>
+					: <NavLink to={'/login'}>
+						Login
 				</NavLink>}
 
 			</div>
