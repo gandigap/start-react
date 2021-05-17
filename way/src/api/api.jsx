@@ -14,12 +14,10 @@ export const usersAPI = {
       .then(response => response.data);
   },
   follow(userid) {
-    return instance.post(`follow/${userid}`)
-      .then(response => response.data);
+    return instance.post(`follow/${userid}`);
   },
   unfollow(userid) {
-    return instance.delete(`follow/${userid}`)
-      .then(response => response.data);
+    return instance.delete(`follow/${userid}`);
   },
   getProfile(userId) {
     console.warn('Obsolete method/ Please profileApi')
@@ -29,16 +27,13 @@ export const usersAPI = {
 
 export const profileAPI = {
   getProfile(userId) {
-    return instance.get(`profile/` + userId)
-      .then(response => response.data);
+    return instance.get(`profile/` + userId);
   },
   getStatus(userId) {
-    return instance.get(`profile/status/` + userId)
-      .then(response => response.data);
+    return instance.get(`profile/status/` + userId);
   },
   updateStatus(status) {
-    return instance.put(`profile/status`, { status: status })
-      .then(response => response.data);
+    return instance.put(`profile/status`, { status: status });
   },
 }
 

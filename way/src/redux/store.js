@@ -48,7 +48,7 @@ let store = {
         }
     },
     _callSubscriber() {
-        console.log('state changed');
+
     },
 
     subscribe(observer) {

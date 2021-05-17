@@ -1,9 +1,11 @@
-const FormControl = ({ input, meta, child, ...props }) => {
-  const hasError = meta.touched && meta.error;
+import { Field } from 'redux-form';
+
+const FormControl = ({ input, meta: { touched, error }, children }) => {
+  const hasError = touched && error;
   return (
     <div className={'form__textarea' + (hasError ? " error-validate" : "")}>
-      {props.children}
-      {hasError && <span className='message-error-validate'>{meta.error}</span>}
+      {children}
+      {hasError && <span className='message-error-validate'>{error}</span>}
     </div>
   )
 }
@@ -20,3 +22,15 @@ export const Input = (props) => {
     <input {...input} {...restProps} name="" ></input>
   </FormControl>)
 }
+
+export const createField = (placeholder, name, validators, component, props = {}, text) => (
+  <div>
+    <Field type="text"
+      name={name}
+      id=""
+      placeholder={placeholder}
+      component={component}
+      validate={validators}
+      {...props} />{text}
+  </div>
+)
